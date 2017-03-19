@@ -1,0 +1,25 @@
+script "placeholderField"
+
+constant kPlaceholder = "Question Text"
+constant kDefaultColor = "192,192,192"
+constant kHilitedColor = "52,52,52"
+
+on openField
+   if the text of me is kPlaceholder then
+      set the text of me to empty
+      set the textColor of me to kHilitedColor
+   end if
+end openField
+
+
+on exitField
+   if the text of me is empty then
+      set the text of me to kPlaceholder
+      set the textColor of me to kDefaultColor
+   end if
+end exitField
+
+
+getProp placeHolder
+   return kPlaceholder
+end placeHolder
